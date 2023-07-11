@@ -10,7 +10,10 @@ namespace PersionAgeProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello world");
+            Person p = new Person();
+            Console.WriteLine("Enter the Age of Person");
+            int age=int.Parse(Console.ReadLine());
+            p.ValidAge(age);
         }
     }
 }
