@@ -9,15 +9,16 @@ namespace PersionAgeProgram
     public class Person
     {
         
-        public void ValidAge(int age)
+        public int ValidAge(int age)
         {
-           
-
-                if (age <= 0)
-                {
+            if (age <= 0 || age >150)
+            {
                 throw new PersonException("Please provide valid age");
-                }
-            try{ 
+            }
+            else
+            {
+                try
+                {
                     if (age >= 1 && age <= 14)
                     {
                         Console.WriteLine("Children ");
@@ -34,11 +35,12 @@ namespace PersionAgeProgram
                     {
                         Console.WriteLine("Seniors person");
                     }
-                
-            }
-            catch (ArgumentNullException ex)
-            {
-                throw new PersonException(ex.Message);
+                    return age;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    throw new PersonException(ex.Message);
+                }
             }
         }
     }
